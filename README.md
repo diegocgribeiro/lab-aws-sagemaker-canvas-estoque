@@ -1,47 +1,49 @@
-# 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
+# 📊 Resultado: Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
 
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
-
-## 📋 Pré-requisitos
-
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
-
-
-## 🎯 Objetivos Deste Desafio de Projeto (Lab)
-
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
-
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
-
+Bem-vindo ao resultado do desafio de projeto Previsão de Estoque Inteligente na AWS com SageMaker Canvas do Bootcamp Nexa - Machine Learning para Iniciantes na AWS em parceria com DIO, esse é meu primeiro contato com SageMaker e com o ambiente AWS com foco em Machine Learning
 
 ## 🚀 Passo a Passo
 
-### 1. Selecionar Dataset
+### Passo 1 1️⃣
 
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
+Foi selecionado o Dataset que foi usado para para treinar e testar seu modelo de ML, o ideal na escolha de datasets para treinar e testar são os que contém informações correlacionadas!
+Tive como escolha o dataset-1000-com-preco-variavel-e-renovacao-estoque.csv, disponível no repositório!
 
-### 2. Construir/Treinar
+### Passo 2 2️⃣
 
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
+Configurei as variáveis de entrada e saída de acordo com os dados, selecionei algumas informações importante como a "coluna target" e a "coluna id"
 
-### 3. Analisar
+A imagem mostra como ficou o ambiente após a configuração
+![Build after Configure](https://github.com/diegocgribeiro/lab-aws-sagemaker-canvas-estoque/assets/172605729/b9545448-09fc-4cf1-87df-4bb9f2cacd25)
 
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
+Após a configuração é necessário clicar em Quick Build e iniciar o treinamento do modelo de ML
 
-### 4. Prever
+### Passo 3 3️⃣
 
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
+Examinei as métricas de performance do modelo, o qual teve os seguintes resultados
 
-## 🤔 Dúvidas?
+AVG WQL: 0.346, medida usada em problemas de regressão quantílica
 
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+MAPE: 0.971, medida usada como a média dos erros absolutos relativos aos valores reais
+
+WAPE: 0.581, essa métrica é útil quando há uma necessidade de considerar a magnitude dos valores reais.
+
+RMSE: 36.006, é uma métrica muito utilizada por ser sensível a grandes erros
+
+MASE: 0.852: é usada para comparar modelos de diferentes séries temporais.
+
+Lembrando que essas métricas são usadas para avaliar a performance de modelos de previsão, cada uma com suas próprias vantagens e desvantagens dependendo do contexto do problema e dos dados.
+
+![Analyze](https://github.com/diegocgribeiro/lab-aws-sagemaker-canvas-estoque/assets/172605729/23c8783a-0d56-49ae-8b58-a021a851d7be)
+
+### Passo 4 4️⃣
+
+Usei o modelo treinado para fazer previsões de estoque e com isso conseguimos ver alguns resultados que irei deixar a imagem abaixo
+
+Sendo que P10 (rosa) seria o pior o cenário, P50 (verde) seria o cenário mediano e já o P90 (amarelo) seria o melhor cenário
+
+![single_prediction_results (2)](https://github.com/diegocgribeiro/lab-aws-sagemaker-canvas-estoque/assets/172605729/57c3280a-009c-43c3-b0a0-30506bfdf55a)
+
+![single_prediction_results (2)](https://github.com/diegocgribeiro/lab-aws-sagemaker-canvas-estoque/assets/172605729/666e8331-086a-440b-b795-db6d1c16dcf8)
+
+# Esse foi o meu resultado junto com os insights do desafio de projeto Previsão de Estoque Inteligente na AWS com SageMaker Canvas
